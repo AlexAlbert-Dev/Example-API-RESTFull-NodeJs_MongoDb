@@ -19,6 +19,18 @@ class VeiculoController {
             }
         })
     }
+
+    static putVeiculo = (req, res) => {
+        const id = req.params.id;
+
+        veiculos.findByIdAndUpdate(id, {$set : req.body}, (err) => {
+            if(err) {
+                res.status(500).send({message : `${err.message} - falha ao atualizar veículo!`})
+            } else {
+                res.status(200).send({message: 'Veículo atualizado com sucesso!'})
+            }
+        })
+    }
 }
 
 export default VeiculoController;
