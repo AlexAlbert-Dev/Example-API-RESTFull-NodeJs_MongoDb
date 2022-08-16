@@ -8,6 +8,7 @@ router
     .get("/veiculos/:id", VeiculoController.getByIdVeiculo)
     .post("/veiculos", VeiculoController.postVeiculo)
     .put("/veiculos/:id", VeiculoController.putVeiculo)
+    .delete("/veiculos/:id", VeiculoController.deleteVeiculo)
 
 export default router;
 

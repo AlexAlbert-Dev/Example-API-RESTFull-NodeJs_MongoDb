@@ -43,6 +43,18 @@ class VeiculoController {
             }
         })
     }
+
+    static deleteVeiculo = (req, res) => {
+        const id = req.params.id;
+
+        veiculos.findByIdAndDelete(id, (err) => {
+            if(err) {
+                res.status(500).send({message: `${err.message} - falha ao excluir veículo!`})
+            } else {
+                res.status(200).send({message: 'Veículo excluído com sucesso!'})
+            }
+        })
+    }
 }
 
 export default VeiculoController;
