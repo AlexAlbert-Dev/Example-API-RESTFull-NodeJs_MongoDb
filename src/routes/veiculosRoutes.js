@@ -5,6 +5,7 @@ const router = express.Router();
 
 router
     .get("/veiculos", VeiculoController.getAllVeiculos)
+    .post("/veiculos", VeiculoController.postVeiculo)
 
 export default router;
 
