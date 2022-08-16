@@ -7,7 +7,8 @@ const veiculoSchema = new mongoose.Schema(
         fabricante: {type: String, required: true},
         categoria: {type: String, required: true},
         anoDeFabricacao: {type: Number, required: true},
-        preco: {type: Number, required: true}
+        preco: {type: Number, required: true},
+        placa: {type: String, required: true}
     }
 );
 
