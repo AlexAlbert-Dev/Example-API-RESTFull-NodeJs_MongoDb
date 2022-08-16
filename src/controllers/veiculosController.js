@@ -8,6 +8,18 @@ class VeiculoController {
         })
     }
 
+    static getByIdVeiculo = (req, res) => {
+        const id = req.params.id;
+
+        veiculos.findById(id, (err, veiculos) => {
+            if(err) {
+                res.status(400).send({message : `${err.message} - Id do veículo não encontrado!`})
+            } else {
+                res.status(200).send(veiculos);
+            }
+        })
+    }
+
     static postVeiculo = (req, res) => {
         let veiculo = new veiculos(req.body);
 
