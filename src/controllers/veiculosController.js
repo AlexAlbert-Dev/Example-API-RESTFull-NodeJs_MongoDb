@@ -1,4 +1,4 @@
-import veiculos from "../models/Veiculo";
+import veiculos from "../models/Veiculo.js";
 
 class VeiculoController {
 
