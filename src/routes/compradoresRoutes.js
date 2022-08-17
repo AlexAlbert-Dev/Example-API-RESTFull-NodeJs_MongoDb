@@ -8,5 +8,6 @@ router
     .get("/compradores/:id", CompradorController.getByIdComprador)
     .post("/compradores", CompradorController.postComprador)
     .put("/compradores/:id", CompradorController.putComprador)
+    .delete("/compradores/:id", CompradorController.deleteComprador)
 
 export default router;

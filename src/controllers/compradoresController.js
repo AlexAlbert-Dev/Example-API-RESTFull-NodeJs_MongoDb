@@ -43,6 +43,18 @@ class CompradorController {
             }
         })
     }
+
+    static deleteComprador = (req, res) => {
+        const id = req.params.id;
+
+        compradores.findByIdAndDelete(id, (err) => {
+            if(err) {
+                res.status(500).send({message: `${err.message} - falha ao excluir comprador!`})
+            } else {
+                res.status(200).send({message: 'Comprador excluído com sucesso!'})
+            }
+        })
+    }
 }
 
 export default CompradorController;
