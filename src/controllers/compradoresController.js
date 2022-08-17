@@ -8,6 +8,18 @@ class CompradorController {
         })
     }
 
+    static getByIdComprador = (req, res) => {
+        const id = req.params.id;
+
+        compradores.findById(id, (err, compradores) => {
+            if(err) {
+                res.status(400).send({message : `${err.message} - Id do comprador não encontrado!`})
+            } else {
+                res.status(200).send(compradores);
+            }
+        })
+    }
+
     static postComprador = (req, res) => {
         let comprador = new compradores(req.body);
 
